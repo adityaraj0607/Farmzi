@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>West Bengal - Smart Farmer Hub</title>
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #8BC34A;
+            --accent-color: #FFC107;
+            --dark-color: #2E7D32;
+            --light-color: #F1F8E9;
+            --text-color: #333;
+            --shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                            url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Beauty_of_Westbengal.jpg/1200px-Beauty_of_Westbengal.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: linear-gradient(to top, var(--light-color), transparent);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeIn 1s ease-in;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            animation: slideUp 1s ease-out 0.5s both;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            font-size: 2.2rem;
+            color: var(--dark-color);
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+        }
+        
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        
+        .card-content {
+            padding: 25px;
+        }
+        
+        .card-content h3 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+        
+        .card-content ul {
+            list-style-type: none;
+        }
+        
+        .card-content li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .card-content li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+        }
+        
+        .feature-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .feature-box h2 {
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+        
+        .feature-box p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .feature-item {
+            background-color: var(--light-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h1>West Bengal</h1>
+        <p>The Land of Rivers, Culture and Bountiful Harvests</p>
+    </section>
+    
+    <div class="container">
+        <h2 class="section-title">Agricultural Profile of West Bengal</h2>
+        
+        <div class="feature-box">
+            <h2>Introduction</h2>
+            <p>West Bengal, located in the eastern part of India, is blessed with fertile soil, abundant water resources, and diverse climatic conditions that make it one of the agriculturally productive states in India. The state is often referred to as "The Rice Bowl of India" due to its extensive rice cultivation.</p>
+        </div>
+        
+        <div class="card-container">
+            <div class="card">
+                <div class="card-header">Land Types</div>
+                <div class="card-content">
+                    <ul>
+                        <li>Fertile alluvial plains (Gangetic Plains)</li>
+                        <li>Deltaic regions (Sundarbans)</li>
+                        <li>Hill regions (Darjeeling Himalayas)</li>
+                        <li>Plateau region (Western districts)</li>
+                        <li>Coastal plains (Bay of Bengal coastline)</li>
+                    </ul>
+                </div>
+            </div>
+            
+           
+            
+            <div class="card">
+                <div class="card-header">Major Crops</div>
+                <div class="card-content">
+                    <ul>
+                        <li>Rice (Paddy) - staple crop</li>
+                        <li>Jute - major cash crop</li>
+                        <li>Tea - highland areas</li>
+                        <li>Potatoes - major producer</li>
+                        <li>Mustard and other oilseeds</li>
+                        <li>Vegetables - year-round production</li>
+                        <li>Fruits - mango, litchi, pineapple, banana</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="feature-box">
+            <h2>Farming Techniques</h2>
+            <p>West Bengal farmers employ diverse agricultural practices that have evolved over centuries, blending traditional wisdom with modern innovations:</p>
+            
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>Wet Rice Cultivation</h3>
+                    <p>Traditional paddy farming in flooded fields with transplantation method.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3>SRI (System of Rice Intensification)</h3>
+                    <p>Modern water-saving technique with wider spacing and younger seedlings.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3>Terrace Farming</h3>
+                    <p>Step cultivation on hill slopes in Darjeeling region for tea and other crops.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3>Integrated Farming</h3>
+                    <p>Combining agriculture with pisciculture (fish farming) in lowland areas.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3>Multi-cropping</h3>
+                    <p>Growing multiple crops in succession or simultaneously to maximize land use.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3>Organic Farming</h3>
+                    <p>Growing popularity of chemical-free farming, especially in tea gardens and vegetable cultivation.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="feature-box">
+            <h2>Soil Types</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>Alluvial Soil</h3>
+                    <p>Found in the Gangetic plains, extremely fertile and rich in nutrients. Ideal for rice, jute, and vegetables.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3>Red and Yellow Soils</h3>
+                    <p>Found in the western districts. Suitable for oilseeds, millets, and pulses.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3>Terai Soils</h3>
+                    <p>Moist soils at the Himalayan foothills. Perfect for tea plantations and horticultural crops.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3>Saline Soils</h3>
+                    <p>Common in coastal and Sundarbans regions. Special techniques needed for cultivation.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="feature-box">
+            <h2>Weather and Climate</h2>
+            <p>West Bengal experiences a subtropical climate with distinct seasons that influence agricultural patterns:</p>
+            
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>Summer (March-May)</h3>
+                    <p>Hot and humid with temperatures reaching 38-42°C. Pre-monsoon showers (Kalbaishakhi) benefit early kharif crops.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3>Monsoon (June-September)</h3>
+                    <p>Heavy rainfall period (150-200 cm annually). Main agricultural season for paddy cultivation.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3>Autumn (October-November)</h3>
+                    <p>Moderate temperatures with retreating monsoon. Harvest season for monsoon crops.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3>Winter (December-February)</h3>
+                    <p>Cool and dry with temperatures between 10-25°C. Ideal for rabi crops like potato, wheat, and vegetables.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <p>&copy; 2025 FARMZI - West Bengal Agricultural Information</p>
+    </footer>
+</body>
+</html></footer></div>
