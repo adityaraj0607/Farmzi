@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bihar - Smart Farmer Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+            position: relative;
+            background-color: #2e7d32;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .header-content {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .header-content p {
+            font-size: 1.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-header {
+            background-color: #2e7d32;
+            color: white;
+            padding: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .section-content {
+            padding: 1.5rem;
+        }
+
+        .section-content p {
+            margin-bottom: 1rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            color: #2e7d32;
+            font-weight: bold;
+        }
+
+        .footer {
+            background-color: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        /* Tab Navigation */
+        .tab-nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tab-btn {
+            background-color: #f0f0f0;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn.active {
+            background-color: #2e7d32;
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Contact Form Styling */
+        .support-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        .submit-btn {
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1rem;
+        }
+        
+        .submit-btn:hover {
+            background-color: #1b5e20;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0 2rem;
+        }
+        
+        .nav-button {
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-button:hover {
+            background-color: #1b5e20;
+        }
+
+        /* Weather Widget CSS */
+        .weather-widget-container {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            max-width: 1200px;
+            padding: 0 2rem;
+        }
+
+        .weather-widget {
+            display: flex;
+            background: linear-gradient(to right, #2e7d32, #4caf50);
+            border-radius: 10px;
+            padding: 1rem 2rem;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .weather-widget:hover {
+            transform: translateY(-5px);
+        }
+
+        .weather-icon {
+            font-size: 3.5rem;
+            margin-right: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .weather-info {
+            flex: 1;
+        }
+
+        .weather-info .location {
+            font-size: 1.2rem;
+            margin-bottom: 0.2rem;
+            font-weight: 500;
+        }
+
+        .weather-info .temperature {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .weather-info .details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .weather-info .description {
+            text-transform: capitalize;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            .header-content p {
+                font-size: 1.2rem;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .tab-nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .weather-widget {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+            
+            .weather-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .weather-info .details {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <div class="header-content">
+            <h1>Bihar</h1>
+            <p>The Agricultural Heritage of Eastern India</p>
+        </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <a href="index.html" class="nav-button">Home</a>
+        <a href="#overview" class="nav-button">Overview</a>
+        <a href="#agriculture" class="nav-button">Agriculture</a>
+        <a href="#climate" class="nav-button">Climate</a>
+        <a href="#support" class="nav-button">Farmer Support</a>
+    </div>
+
+    <!-- Weather Widget -->
+    <div class="weather-widget-container">
+        <div class="weather-widget">
+            <div class="weather-icon">
+                <i id="weather-icon" class="wi"></i>
+            </div>
+            <div class="weather-info">
+                <div class="location" id="location">Loading location...</div>
+                <div class="temperature">
+                    <span id="temperature">--</span>°C
+                </div>
+                <div class="details">
+                    <span class="humidity">
+                        <i class="wi wi-humidity"></i> 
+                        Humidity: <span id="humidity">--</span>%
+                    </span>
+                    <span class="feels-like">
+                        Feels like: <span id="feels-like">--</span>°C
+                    </span>
+                </div>
+                <div class="description" id="weather-description">Checking weather...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Overview Section -->
+        <div class="section" id="overview">
+            <div class="section-header">
+                Overview
+            </div>
+            <div class="section-content">
+                <p>Bihar is an eastern Indian state with a rich agricultural legacy. It is situated along the Gangetic plains, making it one of the most fertile regions in India. The state's economy is primarily based on agriculture, employing about 80% of the workforce and contributing significantly to the state's GDP.</p>
+                <p>With its extensive river network including the Ganges, Kosi, and Gandak, Bihar has abundant water resources that support its agricultural activities. The state is known for its production of rice, wheat, pulses, and a variety of fruits and vegetables.</p>
+            </div>
+        </div>
+
+        <!-- Seasonal Information with Tabs -->
+        <div class="section" id="agriculture">
+            <div class="section-header">
+                Agricultural Seasons
+            </div>
+            <div class="section-content">
+                <div class="tab-container">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" data-tab="season1">Kharif Season</button>
+                        <button class="tab-btn" data-tab="season2">Rabi Season</button>
+                        <button class="tab-btn" data-tab="season3">Zaid Season</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="season1">
+                        <h3>Kharif Season (June - October)</h3>
+                        <p>The monsoon-based growing season is crucial for Bihar's agriculture.</p>
+                        <ul>
+                            <li><span class="highlight">Major Crops:</span> Rice, maize, arhar dal (pigeon pea), mung (green gram), urad (black gram), vegetables</li>
+                            <li><span class="highlight">Sowing Period:</span> With the onset of monsoon in June-July</li>
+                            <li><span class="highlight">Harvesting:</span> September-October</li>
+                            <li><span class="highlight">Challenges:</span> Unpredictable monsoon patterns, flooding risks in northern Bihar</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-content" id="season2">
+                        <h3>Rabi Season (October - March)</h3>
+                        <p>The winter growing season for Bihar's wheat and pulse production.</p>
+                        <ul>
+                            <li><span class="highlight">Major Crops:</span> Wheat, gram, masoor (red lentil), mustard, vegetables</li>
+                            <li><span class="highlight">Sowing Period:</span> October-November after kharif harvest</li>
+                            <li><span class="highlight">Harvesting:</span> February-March</li>
+                            <li><span class="highlight">Irrigation:</span> Relies on canal networks, tube wells, and residual moisture</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-content" id="season3">
+                        <h3>Zaid Season (March - June)</h3>
+                        <p>The summer growing season between rabi and kharif.</p>
+                        <ul>
+                            <li><span class="highlight">Major Crops:</span> Vegetables, fruits, moong dal, fodder crops</li>
+                            <li><span class="highlight">Sowing Period:</span> March-April</li>
+                            <li><span class="highlight">Harvesting:</span> May-June before monsoon</li>
+                            <li><span class="highlight">Irrigation:</span> Heavily dependent on irrigation due to hot and dry conditions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Information Grid -->
+        <div class="info-grid" id="climate">
+            <!-- Land Type -->
+            <div class="section">
+                <div class="section-header">
+                    Land Type
+                </div>
+                <div class="section-content">
+                    <p>Bihar's landscape is predominantly characterized by:</p>
+                    <ul>
+                        <li><span class="highlight">Fertile Alluvial Plains:</span> Part of the Gangetic plain, offering rich soil for agriculture</li>
+                        <li><span class="highlight">River Basins:</span> Numerous rivers including Ganga, Kosi, Son, and Gandak create fertile floodplains</li>
+                        <li><span class="highlight">Southern Highlands:</span> Chhotanagpur plateau extends into southern Bihar</li>
+                        <li><span class="highlight">Wetlands:</span> Multiple wetland areas supporting unique ecosystems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Climate -->
+            <div class="section">
+                <div class="section-header">
+                    Climate
+                </div>
+                <div class="section-content">
+                    <p>Bihar experiences a subtropical climate with distinct seasons:</p>
+                    <ul>
+                        <li><span class="highlight">Summer (March-June):</span> Hot and dry with temperatures reaching 35-45°C</li>
+                        <li><span class="highlight">Monsoon (June-September):</span> Humid with moderate to heavy rainfall (1000-1500mm annually)</li>
+                        <li><span class="highlight">Autumn (October-November):</span> Pleasant temperatures around 20-30°C</li>
+                        <li><span class="highlight">Winter (December-February):</span> Cool temperatures ranging from 5-25°C, minimal rainfall</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Major Crops -->
+            <div class="section">
+                <div class="section-header">
+                    Major Crops
+                </div>
+                <div class="section-content">
+                    <p>Bihar's agricultural landscape is dominated by:</p>
+                    <ul>
+                        <li><span class="highlight">Rice:</span> Primary kharif crop and staple food</li>
+                        <li><span class="highlight">Wheat:</span> Main rabi crop cultivated in winter</li>
+                        <li><span class="highlight">Maize:</span> Grown in multiple seasons</li>
+                        <li><span class="highlight">Pulses:</span> Lentil, gram, arhar (pigeon pea), and moong (green gram)</li>
+                        <li><span class="highlight">Oilseeds:</span> Mustard, linseed, and sunflower</li>
+                        <li><span class="highlight">Fruits:</span> Litchi, mango, banana, and guava</li>
+                        <li><span class="highlight">Vegetables:</span> Potato, onion, tomato, brinjal, and okra</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Soil Types -->
+            <div class="section">
+                <div class="section-header">
+                    Soil Types
+                </div>
+                <div class="section-content">
+                    <p>Bihar features various soil types influencing agricultural patterns:</p>
+                    <ul>
+                        <li><span class="highlight">Alluvial Soil:</span> Most common and fertile, found throughout the Gangetic plains</li>
+                        <li><span class="highlight">Tarai Soil:</span> Found in northern regions, high moisture content</li>
+                        <li><span class="highlight">Red Soil:</span> Found in the southern plateau regions</li>
+                        <li><span class="highlight">Diara Soil:</span> Formed in floodplains, highly fertile but flood-prone</li>
+                        <li><span class="highlight">Tal Soil:</span> Clay-rich soil found in low-lying areas, ideal for rice cultivation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Farmer Support Contact Form -->
+        <div class="section" id="support">
+            <div class="section-header">
+                Farmer Support
+            </div>
+            <div class="section-content">
+                <div class="support-form">
+                    <p>Need assistance with farming in Bihar? Fill out the form below:</p>
+                    <form id="farmer-support-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="district">District</label>
+                            <select id="district" name="district" required>
+                                <option value="">Select District</option>
+                                <option value="Patna">Patna</option>
+                                <option value="Gaya">Gaya</option>
+                                <option value="Muzaffarpur">Muzaffarpur</option>
+                                <option value="Bhagalpur">Bhagalpur</option>
+                                <option value="Darbhanga">Darbhanga</option>
+                                <option value="Purnia">Purnia</option>
+                                <option value="Ara">Ara</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="query">Your Query</label>
+                            <textarea id="query" name="query" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Submit Query</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2023 Smart Farmer Hub - Bihar Agricultural Information</p>
+    </footer>
+
+    <script>
+        // Tab Switching Functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                btn.classList.add('active');
+                const tab = btn.getAttribute('data-tab');
+                document.getElementById(tab).classList.add('active');
+            });
+        });
+
+        // Form submission handling
+        document.getElementById('farmer-support-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for your query! Our Bihar agricultural experts will contact you soon.');
+            this.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Weather Widget Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Weather icons mapping
+            const weatherIcons = {
+                '01d': '☀️', // Clear sky day
+                '01n': '🌙', // Clear sky night
+                '02d': '⛅', // Few clouds day
+                '02n': '☁️', // Few clouds night
+                '03d': '☁️', // Scattered clouds
+                '03n': '☁️',
+                '04d': '☁️', // Broken clouds
+                '04n': '☁️',
+                '09d': '🌧️', // Shower rain
+                '09n': '🌧️',
+                '10d': '🌦️', // Rain day
+                '10n': '🌧️', // Rain night
+                '11d': '⛈️', // Thunderstorm
+                '11n': '⛈️',
+                '13d': '❄️', // Snow
+                '13n': '❄️',
+                '50d': '🌫️', // Mist
+                '50n': '🌫️'
+            };
+
+            // Function to get weather data
+            function getWeather(latitude, longitude) {
+                const apiKey = 'd5927e89c7fba5a16c38cbaa442365c4'; // Replace with your OpenWeatherMap API key
+                
+                // If no API key is provided, display dummy data
+                if (apiKey === 'd5927e89c7fba5a16c38cbaa442365c4') {
+                    // Display example data
+                    displayWeather({
+                        name: 'Patna, Bihar',
+                        main: {
+                            temp: 32,
+                            feels_like: 34,
+                            humidity: 65
+                        },
+                        weather: [{ 
+                            description: 'partly cloudy',
+                            icon: '02d'
+                        }]
+                    });
+                    return;
+                }
+                
+                // Use actual API if key is provided
+                fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Weather data unavailable');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        displayWeather(data);
+                    })
+                    .catch(error => {
+                        console.error('Error fetching weather:', error);
+                        document.getElementById('location').textContent = 'Weather data unavailable';
+                    });
+            }
+
+            // Function to display weather data
+            function displayWeather(data) {
+                document.getElementById('location').textContent = data.name || 'Location unknown';
+                document.getElementById('temperature').textContent = Math.round(data.main.temp);
+                document.getElementById('feels-like').textContent = Math.round(data.main.feels_like);
+                document.getElementById('humidity').textContent = data.main.humidity;
+                document.getElementById('weather-description').textContent = data.weather[0].description;
+                
+                // Display weather icon
+                const iconCode = data.weather[0].icon;
+                document.getElementById('weather-icon').textContent = weatherIcons[iconCode] || '🌡️';
+            }
+
+            // Get user's location
+            function getUserLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                        position => {
+                            getWeather(position.coords.latitude, position.coords.longitude);
+                        },
+                        error => {
+                            console.error('Error getting location:', error);
+                            // Default to Patna location if user location is unavailable
+                            getWeather(25.6, 85.1); // Approximate coordinates for Patna, Bihar
+                        }
+                    );
+                } else {
+                    document.getElementById('location').textContent = 'Geolocation not supported';
+                    // Default to Patna location
+                    getWeather(25.6, 85.1);
+                }
+            }
+
+            // Initialize weather widget
+            getUserLocation();
+        });
+    </script>
+</body>
+</html>
