@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajasthan - Smart Farmer Hub</title>
+    <style>
+        :root {
+            --primary-color: #e25822; /* Rajasthani saffron color */
+            --secondary-color: #f9c22e; /* Desert sand color */
+            --accent-color: #008170; /* Emerald green for vegetation */
+            --text-color: #333333;
+            --light-bg: #fff9f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1624634910574-0573aa148444');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        nav {
+            background-color: var(--primary-color);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .section h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .info-card {
+            background-color: var(--light-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .info-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+        
+        .crop-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .crop-item {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table th, table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        table th {
+            background-color: var(--secondary-color);
+        }
+        
+        table tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            nav ul li {
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rajasthan: Land of Kings</h1>
+        <p>Explore the agricultural heritage and farming practices of India's largest state</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#land-type">Land Type</a></li>
+           
+            <li><a href="#farming-techniques">Farming Techniques</a></li>
+            <li><a href="#major-crops">Major Crops</a></li>
+            <li><a href="#soil-type">Soil Type</a></li>
+            <li><a href="#weather">Weather</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <div class="section" id="land-type">
+            <h2>Land Type</h2>
+            <p>Rajasthan features diverse land types across its vast territory:</p>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Desert Region</h3>
+                    <p>The Thar Desert covers approximately 60% of the state, making Rajasthan the largest desert state in India. Sandy soil with low fertility and minimal water retention characterizes this region.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Aravalli Range</h3>
+                    <p>This mountain range divides the state into two regions and provides slightly more fertile soil in its valleys, supporting more diverse agriculture.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Eastern Plains</h3>
+                    <p>More fertile areas with alluvial soil that support intensive agriculture, particularly in regions near rivers like Chambal, Banas, and Luni.</p>
+                </div>
+            </div>
+        </div>
+        
+       
+        
+        <div class="section" id="farming-techniques">
+            <h2>Farming Techniques</h2>
+            <p>Farmers in Rajasthan have developed unique agricultural methods to cope with the challenging environment:</p>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Drip Irrigation</h3>
+                    <p>Water-efficient irrigation techniques that deliver water directly to plant roots, reducing evaporation loss in the arid climate.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Water Harvesting</h3>
+                    <p>Traditional structures like khadins (earthen embankments) and johads (check dams) capture rainwater for agricultural use.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Mixed Cropping</h3>
+                    <p>Planting multiple crops simultaneously to maximize land use and reduce risk from crop failure.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Dry Farming</h3>
+                    <p>Specialized techniques for growing crops with minimal rainfall, including deep tillage and moisture conservation practices.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section" id="major-crops">
+            <h2>Major Crops</h2>
+            <p>Despite harsh conditions, Rajasthan produces a variety of crops across seasons:</p>
+            
+            <table>
+                <tr>
+                    <th>Season</th>
+                    <th>Major Crops</th>
+                </tr>
+                <tr>
+                    <td>Kharif (Monsoon)</td>
+                    <td>Bajra (Pearl Millet), Jowar (Sorghum), Maize, Pulses, Groundnut</td>
+                </tr>
+                <tr>
+                    <td>Rabi (Winter)</td>
+                    <td>Wheat, Barley, Gram, Mustard, Rapeseed</td>
+                </tr>
+                <tr>
+                    <td>Cash Crops</td>
+                    <td>Cotton, Sugarcane, Tobacco, Oilseeds</td>
+                </tr>
+                <tr>
+                    <td>Spices</td>
+                    <td>Cumin, Coriander, Fenugreek, Red Chillies</td>
+                </tr>
+            </table>
+            
+            <div class="crop-list">
+                <span class="crop-item">Bajra</span>
+                <span class="crop-item">Wheat</span>
+                <span class="crop-item">Mustard</span>
+                <span class="crop-item">Pulses</span>
+                <span class="crop-item">Jowar</span>
+                <span class="crop-item">Maize</span>
+                <span class="crop-item">Barley</span>
+                <span class="crop-item">Gram</span>
+                <span class="crop-item">Cumin</span>
+                <span class="crop-item">Coriander</span>
+                <span class="crop-item">Groundnut</span>
+                <span class="crop-item">Cotton</span>
+            </div>
+        </div>
+        
+        <div class="section" id="soil-type">
+            <h2>Soil Type</h2>
+            <p>Rajasthan features several soil types across its diverse geography:</p>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Desert Soil</h3>
+                    <p>Sandy with low water retention and organic content, found throughout western Rajasthan. Suitable for drought-resistant crops like bajra and jowar.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Red and Yellow Soil</h3>
+                    <p>Found in eastern Rajasthan, these soils are moderately fertile and support crops like wheat, maize, and pulses.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Alluvial Soil</h3>
+                    <p>Most fertile soil type found in river basins like Chambal and Banas. Ideal for intensive agriculture and cash crops.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Black Soil</h3>
+                    <p>Found in parts of southeast Rajasthan, retains moisture well and is suitable for cotton and oilseed cultivation.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section" id="weather">
+            <h2>Weather & Climate</h2>
+            <p>Rajasthan experiences extreme climate conditions that significantly impact agricultural practices:</p>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Summer (April-June)</h3>
+                    <p>Extremely hot with temperatures reaching 45-50°C in western regions. Minimal agricultural activity except in irrigated areas.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Monsoon (July-September)</h3>
+                    <p>Limited rainfall (20-60 cm annually) with eastern regions receiving more than western. Critical for kharif crop cultivation.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Winter (October-March)</h3>
+                    <p>Mild to cold temperatures (5-25°C) with minimal rainfall. Ideal for rabi crop cultivation in irrigated areas.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Rainfall Distribution</h3>
+                    <p>Highly uneven, with eastern districts receiving 60-100 cm annually while western desert regions get less than 20 cm.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 FARMZI - Rajasthan Agricultural Information</p>
+    </footer>
+</body>
+</html></div>
