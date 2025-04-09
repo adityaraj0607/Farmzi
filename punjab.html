@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punjab - Smart Farmer Hub</title>
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header styles */
+        header {
+            background: linear-gradient(135deg, #4CAF50, #8BC34A);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: #2E7D32;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 15px 0;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: #FFD700;
+        }
+        
+        /* Section styling */
+        section {
+            padding: 50px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            position: relative;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: #2E7D32;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #FFD700;
+        }
+        
+        /* Info card styling */
+        .info-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .info-card h3 {
+            color: #2E7D32;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        
+        /* Grid layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        /* Image styling */
+        .image-container {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2E7D32;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 30px;
+        }
+        
+        footer p {
+            margin: 10px 0;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.3rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .info-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Punjab - Land of Five Rivers</h1>
+            <p>Explore the rich agricultural heritage, diverse farming practices, and natural resources of Punjab - India's breadbasket</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#land">Land</a></li>
+            <li><a href="#farming">Farming</a></li>
+            <li><a href="#crops">Crops</a></li>
+            <li><a href="#weather">Weather</a></li>
+            <li><a href="#soil">Soil</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="land">
+            <h2 class="section-title">Land Types in Punjab</h2>
+            <div class="grid-container">
+                <div class="info-card">
+                    <h3>Plains and Fertile Land</h3>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1536420113339-72c047276532?auto=format&fit=crop&q=80" alt="Punjab Plains">
+                    </div>
+                    <p>Punjab is predominantly a fertile plain formed by the alluvial deposits of the Indus River and its tributaries. The flat, expansive plains make it ideal for extensive agriculture operations and mechanized farming.</p>
+                </div>
+                <div class="info-card">
+                    <h3>River Valleys</h3>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1586245070855-db6bbe384208?auto=format&fit=crop&q=80" alt="Punjab Rivers">
+                    </div>
+                    <p>The five rivers - Sutlej, Beas, Ravi, Chenab, and Jhelum - create fertile river valleys across Punjab. These river systems provide extensive irrigation networks that have been vital to Punjab's agricultural success.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Shivalik Hills</h3>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1612869538502-172eaaf3f171?auto=format&fit=crop&q=80" alt="Shivalik Hills">
+                    </div>
+                    <p>In the northeastern part of Punjab lie the Shivalik Hills, offering a different terrain with rolling foothills and varied vegetation. These areas have distinctive agricultural practices adapted to the sloped landscape.</p>
+                </div>
+            </div>
+        </section>
+        
+       
+        
+        <section id="farming">
+            <h2 class="section-title">Farming Techniques</h2>
+            <div class="grid-container">
+                <div class="info-card">
+                    <h3>Mechanized Farming</h3>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1585638648927-6078a2191165?auto=format&fit=crop&q=80" alt="Tractors in Field">
+                    </div>
+                    <p>Punjab leads India in agricultural mechanization, with widespread use of tractors, harvesters, and modern implements. This mechanization has contributed to high productivity and efficiency in farming operations.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Irrigation Systems</h3>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1586177876130-f372e01ae1ea?auto=format&fit=crop&q=80" alt="Irrigation Systems">
+                    </div>
+                    <p>The extensive canal network from the Green Revolution era, combined with modern drip and sprinkler irrigation, ensures water reaches crops efficiently. Punjab has one of the most comprehensive irrigation infrastructures in India.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Crop Rotation</h3>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1594507801086-54f157168359?auto=format&fit=crop&q=80" alt="Crop Rotation">
+                    </div>
+                    <p>Farmers practice strategic crop rotation, primarily with wheat-paddy cycles, but increasingly incorporating pulses and vegetables to maintain soil fertility and break pest cycles.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="crops">
+            <h2 class="section-title">Major Crops</h2>
+            <div class="grid-container">
+                <div class="info-card">
+                    <h3>Wheat</h3>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1c5a4008a?auto=format&fit=crop&q=80" alt="Wheat Fields">
+                    </div>
+                    <p>Wheat is Punjab's primary rabi (winter) crop, with the state producing about 17% of India's total wheat. High-yielding varieties and advanced farming techniques make Punjab's wheat productivity among the highest in the country.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Rice</h3>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1536746295297-9d8e0293de37?auto=format&fit=crop&q=80" alt="Rice Paddies">
+                    </div>
+                    <p>Punjab is a major producer of rice, particularly basmati varieties known for their aroma. The kharif (monsoon) season sees extensive rice cultivation, though there are growing concerns about water usage.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Cotton</h3>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1594118319842-b72a356c1e4a?auto=format&fit=crop&q=80" alt="Cotton Fields">
+                    </div>
+                    <p>Cotton is an important commercial crop in southern Punjab. The region produces both traditional and Bt cotton varieties, supporting India's textile industry with high-quality cotton fiber.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Other Crops</h3>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1620706857370-e1b9770e8bb1?auto=format&fit=crop&q=80" alt="Various Crops">
+                    </div>
+                    <p>Sugarcane, maize, pulses, fruits, and vegetables are also widely grown across Punjab, contributing to the state's agricultural diversity and food production capacity.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="weather">
+            <h2 class="section-title">Weather and Climate</h2>
+            <div class="grid-container">
+                <div class="info-card">
+                    <h3>Hot Summer</h3>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1564815242441-4da7f6c3637e?auto=format&fit=crop&q=80" alt="Summer Heat">
+                    </div>
+                    <p>Punjab experiences intense summers with temperatures frequently exceeding 40°C (104°F) during May and June. Farmers adapt by growing heat-tolerant crops and using proper irrigation techniques during this period.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Monsoon Season</h3>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?auto=format&fit=crop&q=80" alt="Monsoon Rain">
+                    </div>
+                    <p>The southwest monsoon brings moderate rainfall from July to September, averaging about 500-800mm annually. This period is crucial for kharif crops like rice, which rely heavily on monsoon precipitation.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Cool Winter</h3>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1520716963369-9b24de292417?auto=format&fit=crop&q=80" alt="Winter Fields">
+                    </div>
+                    <p>Winters (December-February) are mild to cold with temperatures occasionally dropping to near freezing. This season is ideal for growing wheat, vegetables, and other rabi crops that thrive in cooler conditions.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="soil">
+            <h2 class="section-title">Soil Types</h2>
+            <div class="grid-container">
+                <div class="info-card">
+                    <h3>Alluvial Soil</h3>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1621604470291-32608e4048e5?auto=format&fit=crop&q=80" alt="Alluvial Soil">
+                    </div>
+                    <p>The most prevalent soil type in Punjab is alluvial soil, deposited by the region's rivers over millennia. Rich in nutrients and with excellent drainage properties, this soil is perfect for growing a wide range of crops.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Loamy Soil</h3>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1570586437263-ab629fccc818?auto=format&fit=crop&q=80" alt="Loamy Soil">
+                    </div>
+                    <p>Loamy soil with balanced proportions of sand, silt, and clay is common across central Punjab. This soil has ideal moisture retention and aeration properties for most agricultural applications.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Sandy Loam</h3>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1501432299677-297f8f92cd5f?auto=format&fit=crop&q=80" alt="Sandy Loam">
+                    </div>
+                    <p>In southwestern Punjab, sandy loam soils are prevalent. These soils drain quickly and warm up rapidly in the spring, making them suitable for early planting but requiring careful irrigation management.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <h3>FARMZI - Punjab Agricultural Information</h3>
+            <p>Your comprehensive guide to farming in Punjab</p>
+            <p>&copy; 2025 FARMZI. copyright Rules Aplly </p>
+        </div>
+    </footer>
+</body>
+</html></div></section></div>
