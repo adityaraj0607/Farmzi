@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andhra Pradesh Agriculture</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Andhra_Pradesh_Montage.jpg/1280px-Andhra_Pradesh_Montage.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+        
+        .header-content p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: #28a745;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            padding: 15px 0;
+        }
+        
+        .nav-links li {
+            padding: 0 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+        }
+        
+        .nav-links a:hover {
+            color: #ffc107;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #28a745;
+            font-size: 2.5rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #ffc107;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card h3 {
+            color: #28a745;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        /* Specific Section Styles */
+        .famous-list {
+            list-style: none;
+        }
+        
+        .famous-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #ccc;
+        }
+        
+        .famous-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .crop-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .crop-badge {
+            background-color: #e9f7ef;
+            color: #28a745;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        .weather-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .weather-card {
+            background-color: #f1f8ff;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .soil-types {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .soil-type {
+            flex: 1 1 200px;
+            background-color: #fff8e1;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-section {
+            flex: 1 1 300px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section h3 {
+            color: #ffc107;
+            margin-bottom: 15px;
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header-content p {
+                font-size: 1.1rem;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links li {
+                padding: 10px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .card h3 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            header {
+                height: 50vh;
+            }
+            
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <h1>Andhra Pradesh</h1>
+            <p>The Rice Bowl of India - Agricultural Heritage and Practices</p>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#land-type">Land Type</a></li>
+            <li><a href="#farming">Farming Techniques</a></li>
+            <li><a href="#crops">Major Crops</a></li>
+            <li><a href="#weather-soil">Weather & Soil</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Land Type Section -->
+        <section id="land-type">
+            <div class="container">
+                <h2 class="section-title">Land Type</h2>
+                <div class="card">
+                    <p>Andhra Pradesh's landscape is diverse, featuring three distinct geographical regions:</p>
+                    <div class="card-grid">
+                        <div class="card">
+                            <h3>Coastal Plains</h3>
+                            <p>The eastern coastal plains stretch along the Bay of Bengal, creating fertile deltas of the Godavari and Krishna rivers. This region is ideal for intensive agriculture, particularly paddy cultivation.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Eastern Ghats</h3>
+                            <p>The hilly regions of the Eastern Ghats run parallel to the coast, featuring plateaus, hills, and valleys. These areas support diverse cropping patterns including millets, pulses, and various horticultural crops.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Rayalaseema Region</h3>
+                            <p>The inland southwestern region is characterized by semi-arid conditions, rolling plains, and occasional hills. Despite lower rainfall, the region supports dryland agriculture with crops like groundnut, millets, and pulses.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        <!-- Farming Techniques Section -->
+        <section id="farming">
+            <div class="container">
+                <h2 class="section-title">Farming Techniques</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Traditional Methods</h3>
+                        <p>Despite modernization, many farmers maintain traditional practices:</p>
+                        <ul>
+                            <li>Tank irrigation systems developed centuries ago</li>
+                            <li>Intercropping practices to maximize land usage</li>
+                            <li>Traditional seed preservation techniques</li>
+                            <li>Indigenous knowledge of pest management</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Modern Irrigation</h3>
+                        <p>The state has developed extensive irrigation networks:</p>
+                        <ul>
+                            <li>Canal irrigation from the Godavari and Krishna rivers</li>
+                            <li>Micro-irrigation systems like drip and sprinkler irrigation</li>
+                            <li>Lift irrigation projects to serve upland areas</li>
+                            <li>Water conservation through check dams and percolation tanks</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Technological Adoption</h3>
+                        <p>Increasing adoption of modern agricultural technology:</p>
+                        <ul>
+                            <li>Mechanization with tractors, harvesters, and tillers</li>
+                            <li>Precision farming using GPS and drone technology</li>
+                            <li>Mobile apps for weather forecasting and market prices</li>
+                            <li>High-yielding and drought-resistant crop varieties</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Sustainable Practices</h3>
+                        <p>Growing focus on sustainable agriculture:</p>
+                        <ul>
+                            <li>Organic farming methods and certification</li>
+                            <li>Zero Budget Natural Farming (ZBNF) initiatives</li>
+                            <li>Integrated pest management reducing chemical usage</li>
+                            <li>Crop rotation for soil health improvement</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Major Crops Section -->
+        <section id="crops" style="background-color: #e8f5e9;">
+            <div class="container">
+                <h2 class="section-title">Major Crops</h2>
+                <div class="card">
+                    <h3>Food Grains</h3>
+                    <div class="crop-container">
+                        <span class="crop-badge">Rice</span>
+                        <span class="crop-badge">Jowar</span>
+                        <span class="crop-badge">Maize</span>
+                        <span class="crop-badge">Bajra</span>
+                        <span class="crop-badge">Ragi</span>
+                    </div>
+                    
+                    <h3>Commercial Crops</h3>
+                    <div class="crop-container">
+                        <span class="crop-badge">Cotton</span>
+                        <span class="crop-badge">Sugarcane</span>
+                        <span class="crop-badge">Tobacco</span>
+                        <span class="crop-badge">Chillies</span>
+                        <span class="crop-badge">Turmeric</span>
+                    </div>
+                    
+                    <h3>Pulses</h3>
+                    <div class="crop-container">
+                        <span class="crop-badge">Black Gram</span>
+                        <span class="crop-badge">Green Gram</span>
+                        <span class="crop-badge">Red Gram</span>
+                        <span class="crop-badge">Bengal Gram</span>
+                    </div>
+                    
+                    <h3>Oilseeds</h3>
+                    <div class="crop-container">
+                        <span class="crop-badge">Groundnut</span>
+                        <span class="crop-badge">Sunflower</span>
+                        <span class="crop-badge">Sesame</span>
+                        <span class="crop-badge">Castor</span>
+                    </div>
+                    
+                    <h3>Horticultural Crops</h3>
+                    <div class="crop-container">
+                        <span class="crop-badge">Mango</span>
+                        <span class="crop-badge">Banana</span>
+                        <span class="crop-badge">Coconut</span>
+                        <span class="crop-badge">Papaya</span>
+                        <span class="crop-badge">Guava</span>
+                        <span class="crop-badge">Citrus</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Weather and Soil Section -->
+        <section id="weather-soil">
+            <div class="container">
+                <h2 class="section-title">Weather & Soil Type</h2>
+                
+                <div class="card">
+                    <h3>Climate</h3>
+                    <p>Andhra Pradesh experiences a tropical climate with distinct seasons:</p>
+                    <div class="weather-grid">
+                        <div class="weather-card">
+                            <h4>Summer (March-June)</h4>
+                            <p>Hot and humid with temperatures reaching 40-45°C in interior regions.</p>
+                        </div>
+                        <div class="weather-card">
+                            <h4>Monsoon (June-September)</h4>
+                            <p>Southwest monsoon brings 60-70% of annual rainfall (500-1100mm).</p>
+                        </div>
+                        <div class="weather-card">
+                            <h4>Post-Monsoon (Oct-Dec)</h4>
+                            <p>Northeast monsoon affects coastal areas with occasional cyclones.</p>
+                        </div>
+                        <div class="weather-card">
+                            <h4>Winter (Dec-February)</h4>
+                            <p>Mild temperatures between 15-25°C with minimal rainfall.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Soil Types</h3>
+                    <p>The state has diverse soil types supporting various agricultural activities:</p>
+                    <div class="soil-types">
+                        <div class="soil-type">
+                            <h4>Alluvial Soil</h4>
+                            <p>Found in river deltas and coastal plains. Rich in nutrients and excellent for paddy, sugarcane, and banana cultivation.</p>
+                        </div>
+                        <div class="soil-type">
+                            <h4>Red Soil</h4>
+                            <p>Covers approximately 66% of the state. Suitable for millets, pulses, oilseeds, and cotton with proper fertilization.</p>
+                        </div>
+                        <div class="soil-type">
+                            <h4>Black Cotton Soil</h4>
+                            <p>Found in Rayalaseema and parts of Telangana. Highly fertile and moisture-retentive, ideal for cotton, oilseeds, and pulses.</p>
+                        </div>
+                        <div class="soil-type">
+                            <h4>Laterite Soil</h4>
+                            <p>Present in hilly regions. Less fertile but suitable for cashew, coconut, and forest plantations.</p>
+                        </div>
+                        <div class="soil-type">
+                            <h4>Sandy Soil</h4>
+                            <p>Found in coastal regions. Best suited for coconut, cashew, and casuarina plantations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Andhra Pradesh</h3>
+                <p>Andhra Pradesh is one of India's major agricultural states, known for its diverse farming practices and agricultural production.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Agricultural Resources</h3>
+                <p>For more information about farming in Andhra Pradesh, visit the official Department of Agriculture website.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Department of Agriculture<br>
+                Government of Andhra Pradesh<br>
+                Vijayawada, Andhra Pradesh</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 FARMZI. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html></div></ul>
