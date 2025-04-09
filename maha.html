@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maharashtra Agricultural Profile | Smart Farmer Hub</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1588084603723-41322210d44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 20px;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #22577A;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            background-color: #FF7722;
+            bottom: -10px;
+            left: 20%;
+        }
+        
+        /* Feature Cards */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature-content {
+            padding: 25px;
+        }
+        
+        .feature-card h3 {
+            color: #22577A;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            border-left: 4px solid #FF7722;
+            padding-left: 10px;
+        }
+        
+        .feature-card p, .feature-card ul {
+            margin-bottom: 20px;
+        }
+        
+        .feature-card ul {
+            list-style-position: inside;
+            padding-left: 20px;
+        }
+        
+        .feature-card li {
+            margin-bottom: 8px;
+        }
+        
+        /* Color Scheme */
+        .bg-light {
+            background-color: #f9f9f9;
+        }
+        
+        .accent-color {
+            color: #FF7722;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #22577A;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Maharashtra <span class="accent-color">Agricultural</span> Profile</h1>
+        <p>Discover the rich agricultural heritage and farming practices of Maharashtra, one of India's most diverse agricultural states</p>
+    </header>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Introduction Section -->
+        <section>
+            <div class="section-title">
+                <h2>The Land of Agricultural Diversity</h2>
+            </div>
+            <p>Maharashtra is a state in western India known for its diverse geography, rich cultural heritage, and significant contribution to India's agricultural output. From the fertile coastal plains to the rugged plateaus of the Deccan, Maharashtra's agricultural landscape is as varied as its culture.</p>
+        </section>
+        
+        <!-- Features Section -->
+        <section class="bg-light">
+            <div class="section-title">
+                <h2>Agricultural Features</h2>
+            </div>
+            
+            <div class="features">
+                <!-- Land Type Card -->
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3>Land Type</h3>
+                        <p>Maharashtra's diverse typography includes:</p>
+                        <ul>
+                            <li>Coastal plains (Konkan)</li>
+                            <li>Western Ghats (Sahyadri Range)</li>
+                            <li>Deccan Plateau (Marathwada & Vidarbha)</li>
+                            <li>River basins of Godavari, Krishna, and Tapi</li>
+                            <li>Black soil highlands</li>
+                        </ul>
+                        <p>This geographical diversity allows for a wide range of agricultural practices across different regions.</p>
+                    </div>
+                </div>
+                
+                <!-- Famous For Card -->
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3>Famous Agricultural Products</h3>
+                        <ul>
+                            <li>Alphonso Mangoes (Ratnagiri & Sindhudurg)</li>
+                            <li>Pomegranates (Solapur & Sangli)</li>
+                            <li>Grapes (Nashik & Sangli)</li>
+                            <li>Cotton (Vidarbha region)</li>
+                            <li>Onions (Nashik)</li>
+                            <li>Sugarcane (Western Maharashtra)</li>
+                            <li>Oranges (Nagpur)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Farming Techniques Card -->
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3>Farming Techniques</h3>
+                        <ul>
+                            <li><strong>Drip Irrigation:</strong> Widely adopted for water conservation</li>
+                            <li><strong>Contour Farming:</strong> Used in hilly regions to prevent soil erosion</li>
+                            <li><strong>Intercropping:</strong> Growing multiple crops together</li>
+                            <li><strong>Organic Farming:</strong> Growing in popularity across the state</li>
+                            <li><strong>Protected Cultivation:</strong> Greenhouses for high-value crops</li>
+                            <li><strong>Precision Farming:</strong> Technology-driven agriculture in developed regions</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Major Crops Card -->
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3>Major Crops</h3>
+                        <p><strong>Food Grains:</strong></p>
+                        <ul>
+                            <li>Jowar (Sorghum)</li>
+                            <li>Rice</li>
+                            <li>Wheat</li>
+                            <li>Bajra (Pearl Millet)</li>
+                        </ul>
+                        <p><strong>Cash Crops:</strong></p>
+                        <ul>
+                            <li>Cotton</li>
+                            <li>Sugarcane</li>
+                            <li>Soybean</li>
+                            <li>Turmeric</li>
+                        </ul>
+                        <p><strong>Horticulture:</strong></p>
+                        <ul>
+                            <li>Mangoes, Grapes, Pomegranates</li>
+                            <li>Oranges, Bananas</li>
+                            <li>Vegetables & Flowers</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Soil Type Card -->
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3>Soil Types</h3>
+                        <ul>
+                            <li><strong>Black Cotton Soil (Regur):</strong> Found in the Deccan plateau, excellent for cotton, wheat, sugarcane, and jowar</li>
+                            <li><strong>Red Soil:</strong> Found in parts of Konkan and eastern regions</li>
+                            <li><strong>Lateritic Soil:</strong> Common in Konkan coastal areas</li>
+                            <li><strong>Alluvial Soil:</strong> Found along river valleys, highly fertile for various crops</li>
+                            <li><strong>Forest Soil:</strong> In Western Ghats, suitable for plantation crops</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Weather Card -->
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3>Climate & Weather</h3>
+                        <p>Maharashtra experiences three distinct seasons:</p>
+                        <ul>
+                            <li><strong>Summer (March-May):</strong> Hot and dry with temperatures reaching 40°C in inland regions</li>
+                            <li><strong>Monsoon (June-September):</strong> Heavy rainfall in coastal areas and Western Ghats (2000-2500mm), moderate in central regions (600-700mm)</li>
+                            <li><strong>Winter (October-February):</strong> Mild and dry, temperatures between 12-30°C</li>
+                        </ul>
+                        <p>The varied climate supports diverse agricultural activities throughout the year across different regions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 FARMZI | Maharashtra Agricultural Information</p>
+    </footer>
+</body>
+</html></div>
