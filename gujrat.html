@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gujarat - Smart Farmer Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7f1;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1607960402358-a5ceb93094a0?ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .intro p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-card h3 {
+            color: #2e7d32;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #2e7d32;
+            padding-bottom: 0.5rem;
+        }
+
+        .feature-card ul {
+            list-style-type: none;
+        }
+
+        .feature-card ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .feature-card ul li:before {
+            content: "•";
+            color: #2e7d32;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+        }
+
+        .crops-section {
+            background-color: #e8f5e9;
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+        }
+
+        .crops-section h2 {
+            text-align: center;
+            color: #2e7d32;
+            margin-bottom: 2rem;
+        }
+
+        .crops-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .crop-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .crop-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .techniques-section {
+            margin-bottom: 3rem;
+        }
+
+        .techniques-section h2 {
+            text-align: center;
+            color: #2e7d32;
+            margin-bottom: 2rem;
+        }
+
+        .techniques-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .technique-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .technique-card h3 {
+            color: #2e7d32;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .feature-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gujarat</h1>
+        <p class="subtitle">The Agricultural Powerhouse of Western India</p>
+    </header>
+
+    <div class="container">
+        <section class="intro">
+            <h2>Gujarat's Agricultural Heritage</h2>
+            <p>Gujarat is one of India's most prosperous states with a diverse agricultural landscape. Located on the western coast of India, the state offers a unique combination of fertile land, diverse soil types, and varying climatic conditions that make it suitable for growing a wide variety of crops.</p>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>Land Type</h3>
+                <p>Gujarat has diverse land topography including:</p>
+                <ul>
+                    <li>Coastal plains with alluvial soil</li>
+                    <li>Rocky plateau regions in Saurashtra</li>
+                    <li>Desert regions in Kutch</li>
+                    <li>Fertile plains along river valleys</li>
+                    <li>Wetlands and marshes in certain areas</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>Soil Type</h3>
+                <p>Gujarat possesses various soil types:</p>
+                <ul>
+                    <li>Black cotton soil (ideal for cotton cultivation)</li>
+                    <li>Alluvial soil (along river basins)</li>
+                    <li>Sandy soil (in Kutch region)</li>
+                    <li>Laterite soil (in southern parts)</li>
+                    <li>Saline soil (in coastal areas)</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>Weather Conditions</h3>
+                <p>Gujarat experiences diverse climate patterns:</p>
+                <ul>
+                    <li>Hot summers (March-June): 35-45°C</li>
+                    <li>Monsoon season (July-September)</li>
+                    <li>Mild winters (November-February): 10-25°C</li>
+                    <li>Annual rainfall: 500-1000 mm (varies by region)</li>
+                    <li>Arid conditions in Kutch region</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="crops-section">
+            <h2>Major Crops of Gujarat</h2>
+            <div class="crops-grid">
+                <div class="crop-card">
+                    <h3>Cotton</h3>
+                    <p>Gujarat is India's largest cotton producer</p>
+                </div>
+                <div class="crop-card">
+                    <h3>Groundnut</h3>
+                    <p>Major export crop with high production</p>
+                </div>
+                <div class="crop-card">
+                    <h3>Wheat</h3>
+                    <p>Grown extensively in winter season</p>
+                </div>
+                <div class="crop-card">
+                    <h3>Bajra (Pearl Millet)</h3>
+                    <p>Drought-resistant crop popular in drier regions</p>
+                </div>
+                <div class="crop-card">
+                    <h3>Sugarcane</h3>
+                    <p>Grown in south and central Gujarat</p>
+                </div>
+                <div class="crop-card">
+                    <h3>Castor</h3>
+                    <p>Gujarat is world's largest producer of castor oil</p>
+                </div>
+                <div class="crop-card">
+                    <h3>Dates</h3>
+                    <p>Cultivated extensively in Kutch region</p>
+                </div>
+                <div class="crop-card">
+                    <h3>Cumin</h3>
+                    <p>Important spice crop with high market value</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="techniques-section">
+            <h2>Farming Techniques in Gujarat</h2>
+            <div class="techniques-grid">
+                <div class="technique-card">
+                    <h3>Micro-Irrigation Systems</h3>
+                    <p>Gujarat has pioneered drip and sprinkler irrigation systems to conserve water. The state government's subsidies have made these technologies accessible to many farmers, significantly improving water use efficiency.</p>
+                </div>
+                <div class="technique-card">
+                    <h3>Organic Farming</h3>
+                    <p>Many farmers in Gujarat have adopted organic farming practices, reducing dependency on chemical fertilizers and pesticides, while producing healthier crops with lower environmental impact.</p>
+                </div>
+                <div class="technique-card">
+                    <h3>Climate-Smart Agriculture</h3>
+                    <p>Farmers are increasingly adopting climate-resilient farming techniques, including drought-resistant crop varieties and modified planting schedules to adapt to changing climate patterns.</p>
+                </div>
+                <div class="technique-card">
+                    <h3>Farm Mechanization</h3>
+                    <p>Introduction of modern farm equipment and machinery has revolutionized farming in Gujarat, leading to increased efficiency, reduced labor costs, and better crop yields.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Gujarat's Agricultural Fame</h2>
+            <p>Gujarat is renowned for:</p>
+            <ul>
+                <li><strong>Dairy Industry:</strong> Home to AMUL, one of the largest dairy cooperatives in the world</li>
+                <li><strong>Cotton Production:</strong> Leading producer of cotton in India</li>
+                <li><strong>Groundnut:</strong> Largest producer of groundnuts in the country</li>
+                <li><strong>Spices:</strong> Major producer of cumin, fennel, and other spices</li>
+                <li><strong>Agricultural Innovation:</strong> Pioneer in implementing modern farming technologies</li>
+                <li><strong>White Revolution:</strong> Birthplace of India's milk cooperative movement</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2023 Smart Farmer Hub - Gujarat Agriculture Information</p>
+        <p>Providing farmers with knowledge and resources for sustainable agriculture</p>
+    </footer>
+</body>
+</html></section></div>
