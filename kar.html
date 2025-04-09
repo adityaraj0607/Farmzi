@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karnataka - The Land of Agriculture</title>
+    <style>
+        /* Global styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Hero section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://www.holidify.com/images/bgImages/KARNATAKA.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Container for main content */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        /* Section styling */
+        .section {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 40px;
+            transition: transform 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .section-title {
+            color: #FF6B35;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #FF6B35;
+            padding-bottom: 10px;
+            position: relative;
+        }
+        
+        /* Feature cards */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: linear-gradient(45deg, #f1f1f1, #ffffff);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-card h3 {
+            color: #004E89;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            border-left: 4px solid #FF6B35;
+            padding-left: 10px;
+        }
+        
+        .feature-card ul {
+            list-style-type: none;
+            padding-left: 15px;
+        }
+        
+        .feature-card ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .feature-card ul li:before {
+            content: "•";
+            color: #FF6B35;
+            font-size: 24px;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #004E89;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        /* Additional decorative elements */
+        .decorative-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%239C92AC' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: -1;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Karnataka: The Agricultural Paradise</h1>
+        <p>Explore the rich farming heritage, diverse landscapes, and agricultural wealth of Karnataka</p>
+    </div>
+    
+    <div class="container">
+        <!-- Introduction Section -->
+        <div class="section">
+            <div class="decorative-pattern"></div>
+            <h2 class="section-title">About Karnataka</h2>
+            <p>Karnataka, located in the southwestern region of India, is known for its rich agricultural heritage, diverse landscapes, and innovative farming practices. From the coffee plantations of Coorg to the rice fields of coastal regions, Karnataka showcases India's agricultural diversity at its best.</p>
+        </div>
+        
+        <!-- Features Grid -->
+        <div class="features-grid">
+            <!-- Land Type -->
+            <div class="feature-card">
+                <h3>Land Type</h3>
+                <ul>
+                    <li>Diverse topography including plains, plateaus, mountains, and coastal regions</li>
+                    <li>Western Ghats mountain range along the western border</li>
+                    <li>Central Karnataka dominated by the Deccan Plateau</li>
+                    <li>Coastal plains along the Arabian Sea</li>
+                    <li>River valleys formed by Cauvery, Krishna, and Tungabhadra</li>
+                </ul>
+            </div>
+            
+            <!-- Famous For -->
+            <div class="feature-card">
+                <h3>Famous For</h3>
+                <ul>
+                    <li>Bengaluru - "Silicon Valley of India"</li>
+                    <li>Premium coffee plantations (especially in Coorg/Kodagu)</li>
+                    <li>Mysore Palace and the grand Dasara festival</li>
+                    <li>Hampi - UNESCO World Heritage Site</li>
+                    <li>Sandalwood and silk production</li>
+                    <li>Organic farming initiatives and sustainable agriculture</li>
+                </ul>
+            </div>
+            
+            <!-- Farming Techniques -->
+            <div class="feature-card">
+                <h3>Farming Techniques</h3>
+                <ul>
+                    <li>Integrated farming systems combining crops, livestock, and trees</li>
+                    <li>Precision farming with modern technology</li>
+                    <li>Traditional and organic farming practices</li>
+                    <li>Rainwater harvesting and watershed management</li>
+                    <li>Terrace farming in hilly regions like Coorg and Chikmagalur</li>
+                    <li>Mixed cropping and crop rotation for soil health</li>
+                </ul>
+            </div>
+            
+            <!-- Major Crops -->
+            <div class="feature-card">
+                <h3>Major Crops</h3>
+                <ul>
+                    <li>Coffee and tea (in hilly regions)</li>
+                    <li>Rice (in coastal and irrigated areas)</li>
+                    <li>Ragi (finger millet) - staple food crop</li>
+                    <li>Sugarcane in northern districts</li>
+                    <li>Cotton, maize, and pulses</li>
+                    <li>Spices including cardamom, pepper, and vanilla</li>
+                    <li>Fruits like mangoes, bananas, and grapes</li>
+                </ul>
+            </div>
+            
+            <!-- Soil Type -->
+            <div class="feature-card">
+                <h3>Soil Type</h3>
+                <ul>
+                    <li>Red soil (most common) - suitable for millets, groundnuts</li>
+                    <li>Black soil (northern districts) - ideal for cotton and oilseeds</li>
+                    <li>Laterite soil (coastal and hilly regions) - good for plantation crops</li>
+                    <li>Alluvial soil (river valleys) - perfect for rice and sugarcane</li>
+                    <li>Forest soils in Western Ghats - rich in organic matter</li>
+                </ul>
+            </div>
+            
+            <!-- Weather -->
+            <div class="feature-card">
+                <h3>Weather</h3>
+                <ul>
+                    <li>Tropical climate with distinct seasons</li>
+                    <li>Coastal regions: hot and humid (24-32°C)</li>
+                    <li>Inland areas: moderate to hot (18-35°C)</li>
+                    <li>Western Ghats: cooler climate (15-25°C) with heavy rainfall</li>
+                    <li>Annual rainfall varies from 500mm to 4000mm across regions</li>
+                    <li>Monsoon season from June to September</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Karnataka Agricultural Information | FARMZI</p>
+    </footer>
+</body>
+</html></div>
