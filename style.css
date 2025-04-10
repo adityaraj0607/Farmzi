@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+body {
+    background-color: #080A1A;
+    color: #00FFFF;
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px #00FFFF;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0px 0px 10px #00FFFF;
+    }
+    to {
+        box-shadow: 0px 0px 25px #00FFFF;
+    }
+}
+
+.title {
+    font-size: 30px;
+    text-shadow: 0px 0px 10px #00FFFF;
+}
+
+.search-box input {
+    padding: 10px;
+    width: 200px;
+    border: none;
+    outline: none;
+    background: #000;
+    color: #00FFFF;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #00FFFF;
+}
+
+.search-box button {
+    padding: 10px 20px;
+    background: #00FFFF;
+    border: none;
+    color: #000;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    background: #008CBA;
+    box-shadow: 0px 0px 15px #00FFFF;
+}
+
+.weather-info {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.weather-info h2 {
+    font-size: 25px;
+    text-shadow: 0px 0px 10px #00FFFF;
+}
